@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset="utf-8">
+<title>Api resolver</title>
+<link rel="icon" type="imagem/png" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta http-equiv=X-UA-Compatible content="IE=Edge">
+<meta name=description content="api resolver">
+</head>
+<body>
+    <h2>Api resolver</h2>
+    <br><h3>Regex generator</h3>
+    <form action = "{{url_for('getregex')}}" method="GET">
+        URL <input type="text" name="url" required/>
+        <input type="submit" />
+    </form>
+</body>
+</html>
