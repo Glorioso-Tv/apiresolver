@@ -70,11 +70,11 @@ def getRequest(url,origin=False,referer=False,post=False):
 
 #url
 #item[random]?token=aHR0cHM6Ly9hbmltZXNvbmxpbmUuY2x1Yi9wbGF5ZXIvMzAvMTJISjNKQVowNFFFRDg3&origin=aHR0cHM6Ly9hbmltZXNvbmxpbmUuY2x1Yi9hbmltZS9ib3J1dG8tbmFydXRvLW5leHQtZ2VuZXJhdGlvbnMvZXBpc29kaW8vNzAyOTI=
-#<a id="openPlayer1" data-iframe="https://animesonline.club/player/30/12HJ3JAZ04QED87" href="#Player1"><i class="fa fa-play"></i>Opção 1</a>
+#<a id="openPlayer1" data-iframe="https://animesonclub.com/player/30/12HJ3JAZ04QED87" href="#Player1"><i class="fa fa-play"></i>Opção 1</a>
 
 def animesonline_club(url):
-    referer_home = 'https://animesonline.club/'
-    referer_player = 'https://aprendareceitas.com/'
+    referer_home = 'https://animesonclub.com/'
+    referer_player = 'https://deliciareceitas.com/'
     data = getRequest(url,referer=referer_home)
     links_720p = []
     links_480p = []
@@ -119,7 +119,4 @@ def animesonline_club(url):
     result = js
     return result    
 
-#animesonline_club('https://animesonline.club/anime/boruto-naruto-next-generations/episodio/70292')
-
-
-
+#animesonline_club('https://animesonclub.com/anime/boruto-naruto-next-generations/episodio/70292')
