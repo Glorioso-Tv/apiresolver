@@ -1,5 +1,5 @@
 from urllib.parse import quote_plus
-url_host = 'https://apiresolver.joelsilva3.repl.co'
+url_host = 'https://apiresolver.glorioso.repl.co'
 
 def regex(url):
     if url:
