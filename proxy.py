@@ -121,24 +121,6 @@ def verify_redecanais_https(proxy):
         status = False
     return status
 
-
-def verify_player.aovivotv.xyz/channels_https(proxy):
-    proxy = 'https://' + proxy
-    url_test = 'https://player.aovivotv.xyz/channels/'
-    origin='https://aovivo.pro/tv'
-    referer='https://aovivo.pro/tv/'
-    try:
-        html = getRequest(url_test,origin=origin,referer=referer,proxy=proxy)
-    except:
-        html = ''
-    source = re.compile('source.+?src="(.*?)"', re.MULTILINE|re.DOTALL|re.IGNORECASE).findall(html)
-    if source:
-        status = True
-    else:
-        status = False
-    return status
-
-
 def getRequest(url,origin=False,referer=False,post=False,proxy=False):
     headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36"}
     if origin:
