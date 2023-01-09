@@ -19,6 +19,9 @@ def browser(url):
 def proxy_https():
     url = 'http://proxydb.net/?protocol=https&country=BR'
     proxies = []
+def proxy_https():
+    url = 'https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all'
+    proxies = []
     try:
         list_proxies = browser(url)
         list_proxies = list_proxies.replace('\n', '').replace('\r', '')
@@ -119,6 +122,23 @@ def verify_redecanais_https(proxy):
     return status
 
 
+def verify_player.aovivotv.xyz/channels_https(proxy):
+    proxy = 'https://' + proxy
+    url_test = 'https://player.aovivotv.xyz/channels/'
+    origin='https://aovivo.pro/tv'
+    referer='https://aovivo.pro/tv/'
+    try:
+        html = getRequest(url_test,origin=origin,referer=referer,proxy=proxy)
+    except:
+        html = ''
+    source = re.compile('source.+?src="(.*?)"', re.MULTILINE|re.DOTALL|re.IGNORECASE).findall(html)
+    if source:
+        status = True
+    else:
+        status = False
+    return status
+
+
 def getRequest(url,origin=False,referer=False,post=False,proxy=False):
     headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36"}
     if origin:
@@ -191,5 +211,3 @@ def proxy_web(url,origin=False,referer=False,post=False):
         html = ''
     return html
 #print(proxy_web('https://sinalpublico.com/player3/ch.php?canal=amc&img=amc',origin='https://redecanaistv.net',referer='https://redecanaistv.net/'))
-
-
