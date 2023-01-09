@@ -69,8 +69,8 @@ def getRequest(url,origin=False,referer=False,post=False):
         pass
     return content
 
-#<div id='Link2' Class='Link2'><a href='https://superflixhd.xyz/play.php?vid=4a3db5ec78dadf38700bfd60c4329c74' allowFullScreen mozallowfullscreen msallowfullscreen oallowfullscreen webkitallowfullscreen sandbox='allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' referrerpolicy='no-referrer'>
-#referer = https://redeliteral.com/
+#<div id='Link2' Class='Link2'><a href='https://superflix.cc/filme/tt6920084' allowFullScreen mozallowfullscreen msallowfullscreen oallowfullscreen webkitallowfullscreen sandbox='allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation' referrerpolicy='no-referrer'>
+#referer = https://superflix.cc/
 
 def superflix_club(url):
     url_parsed = urlparse(url) 
@@ -80,7 +80,7 @@ def superflix_club(url):
     data = getRequest(url,referer=referer)
     players = re.compile("<div id='Link.+?' Class='Link.+?'><a href='(.*?)'.+?allowFullScreen.+?>", re.MULTILINE|re.DOTALL|re.IGNORECASE).findall(data)
     #print(players)
-    servers = ['https://superflix.club/player/1/filme.php?id=tt6920084']
+    servers = ['https://superflix.cc/filme/tt6920084/']
     if servers:
         server = random.choice(servers)
         if 'superflix.club' in server and 'filme.php' in server:
@@ -125,7 +125,7 @@ def superflix_club(url):
 
 
 
-#superflix_club('https://superflix.club/filmes/resident-evil-bem-vindo-a-raccoon-city/')
+#superflix_club('https://supertela.in/filmes/resident-evil-bem-vindo-a-raccoon-city/')
 #play.php?vid=legendado
 #filme.php?id=alternativo
 #se_player.php?video_id=us
