@@ -70,7 +70,7 @@ def getRequest(url,origin=False,referer=False,post=False):
 
 def aovivo(url):
     try:
-        data = getRequest(url,referer='https://www.tibiadown.com/')
+        data = getRequest(url,referer='https://www.tibiadown.com')
         script = re.compile('<script>(.*?)</script>', re.MULTILINE|re.DOTALL|re.IGNORECASE).findall(data)
         eval = [js.replace('\r', '').replace('\n', '') for js in script if 'p,a,c,k,e,d' in js]
         eval = eval[0]
@@ -82,7 +82,7 @@ def aovivo(url):
         #src = 'https:' + codecs.decode(src, encoding='unicode_escape')
         src = src.encode("utf-8").decode("unicode-escape")
         src = 'https:' + src
-        stream = src + '|Referer=https://player.aovivotv.xyz/&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36&Origin=https://player.aovivotv.xyz/'
+        stream = src + '|Referer=https://player.aovivotv.xyz/channels&User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36&Origin=https://player.aovivotv.xyz/channels'
     except:
         stream = ''
     dt = {}
